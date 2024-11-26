@@ -1,5 +1,7 @@
 package fr.voxi.eval;
 
+import java.util.*;
+
 public class AudioBook {
 	
 	private int numero ;
@@ -16,6 +18,25 @@ public class AudioBook {
 	@Override
 	public String toString() {
 		return "AudioBook [numero=" + numero + ", titre=" + titre + ", gratuit=" + gratuit + "]";
+	}
+
+	Map<Auditeur, Evaluation> evaluations = new HashMap<Auditeur, Evaluation>() ;
+	
+	public boolean evaluer(Auditeur auditeur, Evaluation evaluation) {
+		if(evaluations.containsKey(auditeur) == false) {
+			evaluations.put(auditeur, evaluation) ;
+			return true ;
+		}
+		else {
+			return false ;
+		}
+	}
+	
+	public void afficherEvaluations() {
+		for(Auditeur auditeur : evaluations.keySet()) {
+			evaluations.get(auditeur) ;
+		}
+		System.out.println(evaluations);
 	}
 	
 	/**

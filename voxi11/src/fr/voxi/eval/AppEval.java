@@ -3,8 +3,6 @@ import java.util.* ;
 
 public class AppEval {
 	
-	// Mettre la deuxième liste dans audiobook et y ajouter -evaluations
-
 	public static void main(String[] args) {
 		
 		Auditeur audit1 = new Auditeur(1, "BRAAS", "Emma") ;
@@ -12,21 +10,23 @@ public class AppEval {
 		Auditeur audit3 = new Auditeur(3, "FERT", "Delphine") ;
 		Auditeur audit4 = new Auditeur(4, "GAMBO", "Rachida") ;
 		Auditeur audit5 = new Auditeur(5, "LUCINA", "Teptida") ;
+						
+		Evaluation eval1 = new Evaluation(5, "Excellent !!!") ;
+		Evaluation eval2 = new Evaluation(1, "Vraiment pas bon") ;
+		Evaluation eval3 = new Evaluation(2, "Bof") ;
+		Evaluation eval4 = new Evaluation(2, "La déception :(") ;
+		Evaluation eval5 = new Evaluation(5, "Bravo") ;
 		
-		ArrayList<Auditeur> auditeurs = new ArrayList<>() ;
-		auditeurs.add(audit1) ;
-		auditeurs.add(audit2) ;
-		auditeurs.add(audit3) ;
-		auditeurs.add(audit4) ;
-		auditeurs.add(audit5) ;
+		AudioBook ab23 = new AudioBook(23, "Bel ami", true) ;
+		System.out.println(ab23);
+		ab23.evaluer(audit1, eval1) ;
+		ab23.evaluer(audit2, eval2) ;
+		ab23.evaluer(audit3, eval3) ;
+		ab23.evaluer(audit4, eval4) ;
+		ab23.evaluer(audit5, eval5) ;
+		ab23.afficherEvaluations();
 		
-		Map<Auditeur, Evaluation> evaluations = new HashMap<Auditeur, Evaluation>() ;
 		
-		evaluations.put(audit1, new Evaluation(5, "Excellent !!!")) ;
-		evaluations.put(audit2, new Evaluation(1, "Vraiment pas bon")) ;
-		evaluations.put(audit3, new Evaluation(2, "Bof")) ;
-		evaluations.put(audit4, new Evaluation(2, "La déception :(")) ;
-		evaluations.put(audit5, new Evaluation(5, "Bravo")) ;
 		
 	}
 
