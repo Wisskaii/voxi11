@@ -22,6 +22,7 @@ public class AudioBook {
 
 	private Map<Auditeur, Evaluation> evaluations = new HashMap<Auditeur, Evaluation>() ;
 	
+	//1.
 	public boolean evaluer(Auditeur auditeur, Evaluation evaluation) {
 		if(evaluations.containsKey(auditeur) == false) {
 			evaluations.put(auditeur, evaluation) ;
@@ -32,12 +33,14 @@ public class AudioBook {
 		}
 	}
 	
+	//2.
 	public void afficherEvaluations() {
 		for(Auditeur auditeur : evaluations.keySet()){
 			System.out.println(auditeur + "" + evaluations.get(auditeur));
 		}
 	}
 	
+	//3.
 	public void supprimerEvaluation(Auditeur auditeur){
 		if(evaluations.containsKey(auditeur)){
 			System.out.println(evaluations.get(auditeur)) ;
@@ -48,6 +51,7 @@ public class AudioBook {
 		}
 	}
 	
+	// 4.
 	public boolean aEvalue(Auditeur auditeur){
 		if(evaluations.containsKey(auditeur) == true){
 			return true ;
@@ -57,8 +61,27 @@ public class AudioBook {
 		}
 	}
 	
-	// Faire exo 5
-	
+	//5.
+	public ArrayList<Auditeur> getAuditeursAyantEvalue() {
+		ArrayList<Auditeur> auditeurAyantEvalue = new ArrayList<>();
+		for (Auditeur auditeur : evaluations.keySet()) {
+			auditeurAyantEvalue.add(auditeur);
+		}
+		return auditeurAyantEvalue;
+	}
+
+	//6.
+
+	public ArrayList<Evaluation> getEvaluationsEffectives(){
+		ArrayList<Evaluation> evaluationsEffectives = new ArrayList<>() ;
+		for(Evaluation evaluation : evaluations.values()){
+			evaluationsEffectives.add(evaluation) ;
+		}
+		return evaluationsEffectives ;
+	}
+
+	//Faire exo 7.
+
 	/**
 	 * @return the numero
 	 */

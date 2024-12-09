@@ -51,8 +51,16 @@ public class AppEval {
 		
 		// Exercice 5.
 		
-		
-		
+		System.out.println(ab23.getAuditeursAyantEvalue());
+		System.out.println();
+
+		// Exercice 6.
+
+		System.out.println(ab23.getEvaluationsEffectives());
+		System.out.println();
+
+		// Faire Ecercice 7.
+
 	}
 
 }
